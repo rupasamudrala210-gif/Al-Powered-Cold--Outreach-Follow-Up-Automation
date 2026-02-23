@@ -1,0 +1,16 @@
+flowchart TD
+    A[Google Sheets<br/>Lead Data] --> B[Set / Edit Fields<br/>Data Normalization]
+
+    B --> C[Google Gemini<br/>LLM Email Generation]
+
+    C --> D[Gmail API<br/>Send Email]
+
+    D --> E[Google Sheets<br/>Update State<br/>(Sent, Timestamp, Thread ID)]
+
+    E --> F[Schedule Trigger<br/>(Daily)]
+
+    F --> G[Check Follow-Up Due]
+
+    G -->|Due & Not Replied| H[Gmail API<br/>Send Follow-Up]
+
+    H --> I[Google Sheets<br/>Update Follow-Up Status]
